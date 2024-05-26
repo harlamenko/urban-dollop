@@ -1,0 +1,22 @@
+name: actions demo
+run-name: ${{ github.actor }} is testing GH actions 🚀
+on: [push]
+jobs:
+  nameless-job:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "triggered on push by ${{ github.event_name }}"
+      - run: echo "os ${{ runner.os }}"
+      - run: echo "branch ${{ github.ref }}"
+      - run: echo "repo ${{ github.repository }}"
+
+      - name: Checkout repo код
+        uses: actions/checkout@v4
+      - run: echo "💡 The ${{ github.repository }} repo cloned to the runner."
+
+      - name: Список файлов
+        run: |
+          ls ${{ github.workspace }}
+      - run: echo "job status is ${{ job.status }}
+      
+      
