@@ -1,7 +1,7 @@
 {
   "name": "ud-ui-kit",
   "version": "0.0.0",
-  "private": true,
+  "private": false,
   "engines": {
     "node": ">=14.20.0",
     "yarn": "Please use npm instead of yarn to install dependencies"
