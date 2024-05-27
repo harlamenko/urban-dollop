@@ -1,0 +1,43 @@
+{
+  "noCi": true,
+  "branches": [
+    "master",
+    {
+      "name": "versions/v5",
+      "range": "5.x",
+      "channel": "5.x"
+    },
+    "versions/v6",
+    "versions/v7"
+  ],
+  "verifyConditions": [
+    "@semantic-release/changelog",
+    "@semantic-release/github",
+    "@semantic-release/npm",
+    "@semantic-release/git"
+  ],
+  "prepare": [
+    "@semantic-release/changelog",
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "../../dist/evo-ui-kit"
+      }
+    ]
+  ],
+  "publish": [
+    "@semantic-release/github",
+    [
+      "@semantic-release/npm",
+      {
+        "pkgRoot": "../../dist/evo-ui-kit"
+      }
+    ]
+  ],
+  "success": [
+    "@semantic-release/github"
+  ],
+  "fail": [
+    "@semantic-release/github"
+  ]
+}

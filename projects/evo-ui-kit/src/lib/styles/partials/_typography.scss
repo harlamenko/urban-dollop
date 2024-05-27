@@ -1,0 +1,135 @@
+@import '../mixins';
+
+.evo-text-field {
+    &_label {
+        @include evo-text-field(label);
+    }
+
+    &_placeholder {
+        @include evo-text-field(placeholder);
+    }
+
+    &_placeholder-bold {
+        @include evo-text-field(placeholder-bold);
+    }
+
+    &_hint {
+        @include evo-text-field(hint);
+    }
+
+    &_error {
+        @include evo-text-field(error);
+    }
+}
+
+.evo-text-paragraph {
+    &_p1 {
+        @include evo-text-paragraph(p1);
+    }
+
+    &_p2 {
+        @include evo-text-paragraph(p2);
+    }
+
+    &_p3 {
+        @include evo-text-paragraph(p3);
+    }
+
+    &_p4 {
+        @include evo-text-paragraph(p4);
+    }
+
+    &_p5 {
+        @include evo-text-paragraph(p5);
+    }
+
+    &_tips {
+        @include evo-text-paragraph(tips);
+    }
+}
+
+.evo-text-caption {
+    &_c1 {
+        @include evo-text-caption(c1);
+    }
+
+    &_c2 {
+        @include evo-text-caption(c2);
+    }
+
+    &_c3 {
+        @include evo-text-caption(c3);
+    }
+}
+
+.evo-text-subtitle {
+    &_s1 {
+        @include evo-text-subtitle(s1);
+    }
+
+    &_s2 {
+        @include evo-text-subtitle(s2);
+    }
+}
+
+.evo-text-header {
+    &_h1 {
+        @include evo-text-header(h1);
+    }
+
+    &_h2 {
+        @include evo-text-header(h2);
+    }
+
+    &_h3 {
+        @include evo-text-header(h3);
+    }
+
+    &_h4 {
+        @include evo-text-header(h4);
+    }
+
+    &_h5 {
+        @include evo-text-header(h5);
+    }
+}
+
+.evo-text-mobile-header {
+    &_h1 {
+        @include evo-text-mobile-header(h1);
+    }
+
+    &_h2 {
+        @include evo-text-mobile-header(h2);
+    }
+
+    &_h3 {
+        @include evo-text-mobile-header(h3);
+    }
+
+    &_h4 {
+        @include evo-text-mobile-header(h4);
+    }
+
+    &_h5 {
+        @include evo-text-mobile-header(h5);
+    }
+}
+
+.evo-text-tips {
+    @include evo-text-tips;
+}
+
+.evo-text-button {
+    &_b1 {
+        @include evo-text-button(b1);
+    }
+
+    &_b2 {
+        @include evo-text-button(b2);
+    }
+
+    &_b3 {
+        @include evo-text-button(b3);
+    }
+}

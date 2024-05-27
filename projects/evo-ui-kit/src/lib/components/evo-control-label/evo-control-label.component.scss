@@ -1,0 +1,25 @@
+@import '../../styles/mixins.scss';
+
+:host {
+    display: block;
+}
+
+.evo-control-label {
+    white-space: inherit;
+
+    &__text {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-right: 8px;
+        margin-bottom: 8px;
+        @include evo-text-paragraph(p1);
+        color: $color-text-grey;
+        white-space: inherit;
+        cursor: default;
+    }
+
+    &__content {
+        white-space: normal;
+    }
+}

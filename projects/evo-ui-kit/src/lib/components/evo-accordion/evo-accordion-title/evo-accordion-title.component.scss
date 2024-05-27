@@ -1,0 +1,56 @@
+@import '../../../styles/variables.scss';
+
+:host {
+    cursor: pointer;
+    user-select: none;
+}
+
+.evo-accordion-title {
+    display: flex;
+    align-items: center;
+    min-height: 64px;
+    color: $color-link;
+    transition: color .3s;
+
+    &:hover {
+        color: $color-link-hover;
+    }
+
+    &:active {
+        color: $color-link-active;
+    }
+
+    &__dot {
+        flex: 0 0 6px;
+        width: 6px;
+        height: 6px;
+        margin-right: 15px;
+        margin-left: 10px;
+        background: $color-link;
+        border-radius: 100%;
+    }
+
+    &__expander {
+        position: relative;
+        display: flex;
+        flex: 0 0 24px;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        margin: 16px 0 16px auto;
+
+        evo-icon {
+            position: absolute;
+            transition: fill .3s, transform .3s;
+            fill: currentColor;
+        }
+    }
+
+    &__label {
+        flex-grow: 1;
+        margin: 16px 0;
+        color: inherit;
+        font-weight: bold;
+        font-size: 18px;
+    }
+}

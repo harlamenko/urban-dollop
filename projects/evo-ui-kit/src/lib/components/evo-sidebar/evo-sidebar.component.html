@@ -1,0 +1,30 @@
+<div class="evo-sidebar__background"
+     *ngIf="isVisible"
+     (click)="closeSidebar(closeTargets.BACKGROUND)"
+></div>
+
+<div class="evo-sidebar"
+     [@open]="currentState"
+     (@open.done)="handleAnimationDone($event)"
+     [evoUiClass]="totalClasses"
+>
+
+    <ng-template #sidebarContentContainer></ng-template>
+
+    <ng-container *ngIf="!isDynamicContent">
+
+        <div evo-sidebar-header
+            [backButton]="backButton"
+            (back)="handleBackClick()"
+            >{{ header }}</div>
+
+        <div evo-sidebar-content
+            [relativeFooter]="relativeFooter"
+            >
+            <ng-content select="[content]"></ng-content>
+        </div>
+
+        <div evo-sidebar-footer><ng-content select="[footer]"></ng-content></div>
+
+    </ng-container>
+</div>

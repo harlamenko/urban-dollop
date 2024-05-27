@@ -1,4 +1,4 @@
-name: actions demo
+name: 🔄 CI
 run-name: ${{ github.actor }} is testing GH actions 🚀
 on: [push]
 jobs:

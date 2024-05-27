@@ -1,0 +1,264 @@
+@import '../../styles/mixins';
+@import '../../styles/keyframes';
+@import '../../styles/components/evo-spinner';
+
+:host {
+    display: inline-block;
+    --evo-input-prefix-content-margin: 0 12px;
+}
+
+.evo-input {
+    $parent-class: &;
+
+    position: relative;
+    cursor: text;
+
+    @include input;
+    @include evo-control-states;
+
+    &_theme-rounded {
+        &:not(#{$parent-class}_size-small) {
+            border-radius: 256px;
+
+            #{$parent-class}__field {
+                border-radius: 256px;
+            }
+        }
+    }
+
+    &_size-small {
+        height: 32px;
+
+        #{$parent-class}__field {
+            padding: 0 8px;
+        }
+
+        #{$parent-class}__tooltip,
+        #{$parent-class}__loading-spinner {
+            flex: 0 0 16px;
+            width: 16px;
+            height: 16px;
+            margin: 0 10px;
+        }
+
+        #{$parent-class}__icon {
+            margin-right: 10px;
+
+            img {
+                max-height: 16px;
+            }
+        }
+
+        #{$parent-class}__tooltip-container {
+            top: 100%;
+
+            &:before {
+                left: calc(100% - 28px);
+            }
+
+            @include media-desktop-m {
+                top: calc(100% + 4px);
+
+                &:before {
+                    left: calc(50% - 6px);
+                }
+            }
+        }
+
+        #{$parent-class}__prefix-icon {
+            width: 16px;
+            height: 16px;
+
+            &:empty {
+                display: none;
+            }
+        }
+
+        #{$parent-class}__icon-clear {
+            width: 16px;
+            height: 16px;
+        }
+    }
+
+    &__prefix-icon {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        width: 24px;
+        height: 24px;
+        margin-left: 12px;
+        fill: $color-icon-dark;
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__prefix-content {
+        display: inline-flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        margin: var(--evo-input-prefix-content-margin);
+
+        &:empty {
+            display: none;
+        }
+
+        &:not(:empty) ~ #{$parent-class}__field {
+            padding-left: 0;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }
+    }
+
+    &__field {
+        flex-grow: 1;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0 8px 0 16px;
+        color: inherit;
+        font-weight: inherit;
+        font-size: inherit;
+        border: none;
+        border-radius: 4px;
+        outline: none;
+
+        &::-webkit-input-placeholder {
+            color: $color-caption-text;
+        }
+
+        &::-moz-placeholder {
+            color: $color-caption-text;
+            opacity: 1
+        }
+
+        &:-ms-input-placeholder {
+            color: $color-caption-text
+        }
+
+        &:disabled {
+            color: $color-disabled-text;
+            background-color: $color-background-grey-light !important;
+        }
+
+        &:not(:last-child) {
+            padding-right: 0;
+        }
+    }
+
+    &__prefix {
+        padding-left: 20px;
+        font-size: 16px;
+        transition: color .2s;
+
+        &_focused {
+            color: $color-black;
+        }
+
+        &:not(:empty) ~ .evo-input__field {
+            padding-left: 0;
+        }
+    }
+
+    &__tooltip {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+        cursor: pointer;
+        user-select: none;
+        fill: $color-icon-dark;
+    }
+
+    &__icon-clear {
+        width: 24px;
+        height: 24px;
+        margin: 0 10px;
+        cursor: pointer;
+        user-select: none;
+        fill: $color-icon-dark;
+    }
+
+    &__icon {
+        margin: 0 20px 0 10px;
+
+        img {
+            display: block;
+            width: 100%;
+            max-width: 60px;
+            height: auto;
+            max-height: 22px;
+        }
+    }
+
+    &__tooltip-container {
+        position: absolute;
+        top: calc(100% - 2px);
+        left: 0;
+        z-index: 1;
+        display: flex;
+        width: 100%;
+        padding: 10px 10px 10px 20px;
+        color: $color-text;
+        line-height: normal;
+        white-space: normal;
+        background-color: $color-highlight;
+        border-radius: 4px;
+        box-shadow: 0 4px 12px 0 rgba(0, 0, 0, .2);
+        cursor: default;
+
+        &[hidden] {
+            display: none !important;
+        }
+
+        &:before {
+            position: absolute;
+            top: -20px;
+            left: calc(100% - 34px);
+            border: 10px solid transparent;
+            border-bottom: 10px solid $color-highlight;
+            pointer-events: none;
+            content: '';
+
+        }
+
+        @include media-desktop-m() {
+            left: calc(50% - 22px);
+
+            &:before {
+                left: calc(50% - 12px);
+            }
+        }
+    }
+
+    &__clearable {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__clearable + #{$parent-class}__additional {
+        margin-left: -10px;
+    }
+
+    &__additional {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__additional:not(:last-child) #{$parent-class}__icon {
+        margin-right: 10px;
+    }
+
+    &__additional + #{$parent-class}__loading-spinner {
+        margin-left: 0;
+    }
+
+    &__loading-spinner {
+        margin: 0 20px;
+        @include evo-spinner(16px);
+    }
+}

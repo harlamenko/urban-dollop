@@ -1,0 +1,97 @@
+@import '../../styles/mixins.scss';
+
+:host {
+    display: inline-block;
+    color: $color-text; // inherited by label color
+}
+
+.evo-checkbox {
+    position: relative;
+    display: inline-block;
+    min-height: 24px;
+    margin: 0;
+    color: inherit;
+
+    &__input {
+        position: absolute;
+        top: 1px;
+        left: 0;
+        z-index: -1;
+        width: 16px;
+        height: 16px;
+        opacity: 0;
+        appearance: none;
+    }
+
+    &__text {
+        position: relative;
+        display: inline-block;
+        padding-top: 1px;
+        padding-left: 32px;
+        color: inherit;
+        font-size: 14px;
+        line-height: 22px;
+        cursor: pointer;
+        user-select: none;
+
+        &:empty {
+            padding-left: 20px;
+
+            &:after {
+                content: '1';
+                display: inline-block;
+                width: 0;
+                visibility: hidden;
+                opacity: 0;
+            }
+        }
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            box-sizing: border-box;
+            width: 16px;
+            height: 16px;
+            margin: 4px;
+            background: $color-white none center;
+            border: 2px solid $color-disabled;
+            border-radius: 2px;
+            transition: background .3s, border-color .3s;
+        }
+
+        input:checked + &:before {
+            background: $color-link url("../../../assets/icons/checkbox-check.svg") no-repeat center;
+            border-color: $color-link;
+        }
+
+        input:indeterminate + &:before {
+            background: $color-link url("../../../assets/icons/checkbox-indeterminate.svg") no-repeat center;
+            border-color: $color-link;
+        }
+
+        input:disabled:not(:checked) + & {
+            cursor: default;
+
+            &:before {
+                background-color: $color-background-grey;
+                border-color: $color-disabled;
+            }
+        }
+
+        input.evo-checkbox_invalid + &:before {
+            border-color: $color-error;
+        }
+
+        input:disabled:checked + &,
+        input:disabled:indeterminate + & {
+            cursor: default;
+
+            &:before {
+                background-color: $color-disabled;
+                border-color: $color-disabled;
+            }
+        }
+    }
+}

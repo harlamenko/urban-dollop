@@ -1,0 +1,35 @@
+@use 'sass:list';
+@use 'evo-button.variables' as evo-button-variables;
+
+/**
+ * get shape selector
+ */
+@function get-shape-selector($shape, $parent-selector: &) {
+    @if not list.index(evo-button-variables.$evo-button-shapes, $shape) {
+        @error "#{$shape} is not a valid button shape. Use one of #{evo-button-variables.$evo-button-shapes}";
+    }
+
+    @return #{$parent-selector}_shape_#{$shape};
+}
+
+/**
+ * get size selector
+ */
+@function get-size-selector($size, $parent-selector: &) {
+    @if not list.index(evo-button-variables.$evo-button-sizes, $size) {
+        @error "#{$size} is not a valid button size. Use one of #{evo-button-variables.$evo-button-sizes}";
+    }
+
+    @return #{$parent-selector}_size_#{$size};
+}
+
+/**
+ * get color selector
+ */
+@function get-color-selector($color, $parent-selector: &) {
+    @if not list.index(evo-button-variables.$evo-button-colors, $color) {
+        @error "#{$color} is not a valid button color. Use one of #{evo-button-variables.$evo-button-colors}";
+    }
+
+    @return #{$parent-selector}_color_#{$color};
+}

@@ -3,94 +3,141 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "urban-dollop": {
-      "projectType": "application",
-      "schematics": {},
+    "evo-ui-kit-local": {
       "root": "",
       "sourceRoot": "src",
+      "projectType": "application",
       "prefix": "app",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
       "architect": {
         "build": {
-          "builder": "@angular-devkit/build-angular:application",
+          "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/urban-dollop",
+            "outputPath": "dist/evo-ui-kit-local",
             "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
-            "tsConfig": "tsconfig.app.json",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "src/tsconfig.app.json",
             "assets": [
+              "src/favicon.ico",
+              "src/assets",
               {
                 "glob": "**/*",
-                "input": "public"
+                "input": "./node_modules/evo-ui-kit/assets/",
+                "output": "./assets/"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "dist/evo-ui-kit/styles/main.scss",
+              "node_modules/@angular/cdk/overlay-prebuilt.css",
+              "src/styles.scss"
             ],
-            "scripts": []
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "./"
+              ]
+            },
+            "scripts": [],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
               "budgets": [
                 {
-                  "type": "initial",
-                  "maximumWarning": "500kB",
-                  "maximumError": "1MB"
-                },
-                {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "2kB",
-                  "maximumError": "4kB"
+                  "maximumWarning": "6kb"
                 }
               ],
-              "outputHashing": "all"
-            },
-            "development": {
-              "optimization": false,
-              "extractLicenses": false,
-              "sourceMap": true
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true
             }
           },
-          "defaultConfiguration": "production"
+          "defaultConfiguration": ""
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "evo-ui-kit-local:build",
+            "port": 4400
+          },
           "configurations": {
             "production": {
-              "buildTarget": "urban-dollop:build:production"
-            },
-            "development": {
-              "buildTarget": "urban-dollop:build:development"
+              "browserTarget": "evo-ui-kit-local:build:production"
             }
+          }
+        }
+      }
+    },
+    "evo-ui-kit": {
+      "root": "projects/evo-ui-kit",
+      "sourceRoot": "projects/evo-ui-kit/src",
+      "projectType": "library",
+      "prefix": "evo",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/evo-ui-kit/tsconfig.lib.json",
+            "project": "projects/evo-ui-kit/ng-package.json"
           },
-          "defaultConfiguration": "development"
-        },
-        "extract-i18n": {
-          "builder": "@angular-devkit/build-angular:extract-i18n"
+          "configurations": {
+            "production": {
+              "project": "projects/evo-ui-kit/ng-package.prod.json",
+              "tsConfig": "projects/evo-ui-kit/tsconfig.lib.prod.json"
+            }
+          }
         },
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
+            "codeCoverage": false,
+            "main": "projects/evo-ui-kit/src/test.ts",
+            "tsConfig": "projects/evo-ui-kit/tsconfig.spec.json",
+            "karmaConfig": "projects/evo-ui-kit/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/**/*.ts",
+              "projects/**/*.html"
+            ]
+          }
+        },
+        "storybook": {
+          "builder": "@storybook/angular:start-storybook",
+          "options": {
+            "browserTarget": "evo-ui-kit:build",
             "styles": [
-              "src/styles.css"
+              "projects/evo-ui-kit/src/lib/styles/main.scss"
             ],
-            "scripts": []
+            "port": 9001,
+            "compodoc": false
           }
         }
       }
     }
-  }
+  },
+  "defaultProject": "evo-ui-kit"
 }

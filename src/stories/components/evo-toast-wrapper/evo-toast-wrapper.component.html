@@ -1,0 +1,26 @@
+<div class="evo-toast-wrapper" [formGroup]="form">
+    <evo-input formControlName="message" class="evo-toast-wrapper__input"></evo-input>
+    <div class="evo-toast-wrapper__buttons">
+        <button evoButton class="evo-toast-wrapper__button" (click)="showToast(toastTypes.DEFAULT)">
+            {{ toastTypes.DEFAULT }}
+        </button>
+        <button evoButton class="evo-toast-wrapper__button" (click)="showToast(toastTypes.SUCCESS)">
+            {{ toastTypes.SUCCESS }}
+        </button>
+        <button evoButton class="evo-toast-wrapper__button" (click)="showToast(toastTypes.DANGER)">
+            {{ toastTypes.DANGER }}
+        </button>
+    </div>
+
+    <br />
+
+    <button evoButton (click)="showTemplateToast(template)">Toast with TemplateRef</button>
+
+    <ng-template #template>
+        This is
+        <b>BOLD</b>
+        text, and this is an
+        <button evoButton size="small" (click)="showToast(toastTypes.SUCCESS)">evo-button</button>
+    </ng-template>
+</div>
+<evo-toast></evo-toast>

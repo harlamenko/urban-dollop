@@ -1,0 +1,108 @@
+@import '../../styles/mixins';
+
+.evo-badge {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 24px;
+    padding: 1px 0;
+    overflow: hidden;
+    color: $color-white;
+    @include evo-text-paragraph(p2);
+    white-space: nowrap;
+    text-align: center;
+    background-color: $color-icon-dark;
+    border-radius: 4px;
+
+    &:not([style*='width']) {
+        padding: 1px 8px;
+    }
+
+    &_multiline {
+        white-space: initial;
+        word-break: break-all;
+    }
+
+    &__content {
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &_success {
+        background-color: $color-success;
+    }
+
+    &_error {
+        background-color: $color-error;
+    }
+
+    &_icon-dark {
+        background-color: $color-icon-dark;
+    }
+
+    &_icon-light {
+        background-color: $color-icon-light;
+    }
+
+    &_graph-1 {
+        background-color: $color-graph-1;
+    }
+
+    &_graph-2 {
+        background-color: $color-graph-2;
+    }
+
+    &_graph-3 {
+        background-color: $color-graph-3;
+    }
+
+    &_graph-4 {
+        background-color: $color-graph-4;
+    }
+
+    &_graph-5 {
+        background-color: $color-graph-5;
+    }
+
+    &_graph-6 {
+        background-color: $color-graph-6;
+    }
+
+    &_graph-7 {
+        background-color: $color-graph-7;
+    }
+
+    &_graph-8 {
+        background-color: $color-graph-8;
+    }
+
+    &_graph-9 {
+        background-color: $color-graph-9;
+    }
+
+    &_graph-10 {
+        background-color: $color-graph-10;
+    }
+
+    &_grey {
+        color: $color-text-grey;
+        background-color: $color-background-grey;
+    }
+
+    &_rating {
+        background-color: $color-rating;
+    }
+
+    &_primary {
+        background-color: $color-primary;
+    }
+
+    &_small {
+        min-height: 18px;
+        @include evo-text-caption(c2);
+
+        &:not([style*='width']) {
+            padding: 0 6px;
+        }
+    }
+}

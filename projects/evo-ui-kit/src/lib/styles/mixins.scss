@@ -1,0 +1,96 @@
+@import 'variables.scss';
+@import './mixins/media-mixins';
+@import './mixins/evo-input-mixins';
+@import './mixins/evo-text-button-mixin';
+@import './mixins/evo-text-caption-mixin';
+@import './mixins/evo-text-header-mixin';
+@import './mixins/evo-text-mobile-header-mixin';
+@import './mixins/evo-text-paragraph-mixin';
+@import './mixins/evo-text-field-mixin';
+@import './mixins/evo-text-subtitle-mixin';
+@import './mixins/evo-text-tips-mixin';
+
+// @include clearfix();
+@mixin clearfix() {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}
+
+// @include clear-ul();
+@mixin clear-ul() {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+// @include clear-btn();
+@mixin clear-btn() {
+    padding: 0;
+    overflow: visible;
+    color: inherit;
+    font: inherit;
+    line-height: inherit;
+    background: none;
+    border: 0;
+    -webkit-appearance: none;
+    user-select: none;
+
+    &::-moz-focus-inner {
+        padding: 0;
+        border: 0;
+    }
+}
+
+// title mixins
+// @deprecated use evo-text-* mixins
+@mixin title {
+    color: #333f48;
+    font-weight: 700;
+    font-family: var(--evo-font-secondary);
+}
+
+// @deprecated use evo-text-* mixins
+@mixin h1 {
+    @include evo-text-header(h1);
+}
+
+// @deprecated use evo-text-* mixins
+@mixin h2 {
+    @include evo-text-header(h2);
+}
+
+// @deprecated use evo-text-* mixins
+@mixin h3 {
+    @include evo-text-header(h3);
+}
+
+// @deprecated use evo-text-* mixins
+@mixin h4 {
+    @include evo-text-header(h4);
+}
+
+/**
+ * @deprecated use evo-input-* mixins
+ */
+@mixin input {
+    @include evo-input(normal, default);
+}
+
+/**
+ * @deprecated use evo-input-states mixin
+ */
+@mixin evo-control-states {
+    @include evo-input-states();
+}
+
+@mixin hide-scroll {
+    -ms-overflow-style: none; /* Internet Explorer 10+ */
+    scrollbar-width: none; /* Firefox */
+
+    &::-webkit-scrollbar {
+        display: none;
+    }
+}

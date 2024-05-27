@@ -1,0 +1,112 @@
+@import '../../styles/mixins.scss';
+
+:host {
+    cursor: pointer;
+}
+
+$parent-class: '.evo-popover';
+$arrow_size: 16px;
+
+#{$parent-class} {
+    &__tip {
+        z-index: 100;
+        width: 300px;
+        font-weight: 400;
+        font-size: $font-size;
+        font-family: var(--evo-font);
+        font-style: normal;
+        white-space: normal;
+        text-align: left;
+        text-decoration: none;
+        visibility: hidden;
+        &[data-popper-placement^="right"] {
+            padding-left: $arrow_size;
+            #{$parent-class}__tip-inner {
+                transform: translateX(-#{$arrow_size});
+            }
+            #{$parent-class}__arrow {
+                left: -#{$arrow_size};
+            }
+            #{$parent-class}__arrow-inner {
+                transform: rotate(-90deg);
+            }
+        }
+        &[data-popper-placement^="left"] {
+            padding-right: $arrow_size;
+            #{$parent-class}__tip-inner {
+                transform: translateX($arrow_size);
+            }
+            #{$parent-class}__arrow {
+                left: 100%;
+            }
+            #{$parent-class}__arrow-inner {
+                transform: rotate(90deg);
+            }
+        }
+        &[data-popper-placement^="top"] {
+            padding-bottom: $arrow_size;
+            #{$parent-class}__tip-inner {
+                transform: translateY($arrow_size);
+            }
+            #{$parent-class}__arrow {
+                top: 100%;
+            }
+            #{$parent-class}__arrow-inner {
+                transform: rotate(180deg);
+            }
+        }
+        &[data-popper-placement^="bottom"] {
+            padding-top: $arrow_size;
+            #{$parent-class}__tip-inner {
+                transform: translateY(-#{$arrow_size});
+            }
+            #{$parent-class}__arrow {
+                top: -#{$arrow_size};
+            }
+        }
+        &_visible {
+            visibility: visible;
+            #{$parent-class}__tip-inner {
+                opacity: 1;
+            }
+            &[data-popper-placement] {
+                #{$parent-class}__tip-inner {
+                    transform: translate(0, 0);
+                }
+            }
+        }
+    }
+    &__tip-inner {
+        padding: 20px;
+        background-color: $color-highlight;
+        border-radius: 6px;
+        box-shadow: 0 6px 18px 0 rgba(0, 0, 0, 0.25);
+        opacity: 0;
+        transition: all 0.2s;
+    }
+    &__arrow-inner {
+        width: $arrow_size;
+        height: $arrow_size;
+        &:before, &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            display: block;
+            width: 0;
+            height: 0;
+            border-style: solid;
+        }
+        &:before {
+            z-index: 10;
+            border-width: 0 8px 8px 8px;
+            border-color: transparent transparent $color-highlight transparent;
+        }
+        &:after {
+            z-index: 9;
+            border-width: 0 8px 8px 8px;
+            border-color: transparent transparent rgba(0, 0, 0, 0.05) transparent;
+            transform: translateY(-1px);
+        }
+    }
+}

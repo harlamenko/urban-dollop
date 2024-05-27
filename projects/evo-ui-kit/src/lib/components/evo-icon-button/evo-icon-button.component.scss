@@ -1,0 +1,110 @@
+@import '../../styles/mixins';
+@import '../../styles/keyframes';
+@import '../../styles/components/evo-spinner';
+
+:host {
+    display: inline-block;
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    --evo-icon-button-background: #{$color-background-grey};
+}
+
+.evo-icon-button {
+    $parent-class: &;
+    $icon-size: 24px;
+    $small-icon-size: 16px;
+    $spinner-size: 20px;
+
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background: none;
+    border: none;
+    outline: none;
+    transition: color 0.3s;
+
+    &_theme-rectangle {
+        padding: 16px 16px 16px 8px;
+        background: var(--evo-icon-button-background);
+        border-radius: 8px;
+        cursor: pointer;
+    }
+
+    @mixin setColors($color, $color-hover, $color-active) {
+        color: $color;
+
+        &:hover {
+            color: $color-hover;
+        }
+
+        &:active {
+            color: $color-active;
+        }
+    }
+
+    &_color-link {
+        @include setColors($color-link, $color-link-hover, $color-link-active);
+    }
+
+    &_color-danger {
+        @include setColors($color-error, $color-error-hover, $color-error-active);
+    }
+
+    &_color-success {
+        @include setColors($color-success, $color-success-hover, $color-success-active);
+    }
+
+    &_size-small {
+        .evo-icon-button__icon-wrapper,
+        .evo-icon-button__loading-spinner {
+            flex: 0 0 $small-icon-size;
+            width: $small-icon-size;
+            height: $small-icon-size;
+        }
+        .evo-icon-button__label {
+            @include evo-text-paragraph(p2);
+        }
+    }
+
+    &__icon-wrapper,
+    &__loading-spinner {
+        flex: 0 0 $icon-size;
+        width: $icon-size;
+        height: $icon-size;
+    }
+
+    ::ng-deep evo-icon {
+        fill: currentColor;
+    }
+
+    &__label {
+        margin-left: 8px;
+        white-space: nowrap;
+        @include evo-text-paragraph(p5);
+
+        &:empty {
+            display: none;
+        }
+    }
+
+    &__loading-spinner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:after {
+            display: block;
+            content: '';
+            box-sizing: border-box;
+            @include evo-spinner($spinner-size);
+        }
+    }
+
+    :host:disabled & {
+        color: $color-disabled !important;
+    }
+}
