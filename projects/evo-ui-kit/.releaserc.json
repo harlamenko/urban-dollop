@@ -1,7 +1,7 @@
 {
   "noCi": true,
   "branches": [
-    "master",
+    "main",
     {
       "name": "versions/v5",
       "range": "5.x",
