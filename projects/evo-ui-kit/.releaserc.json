@@ -15,8 +15,6 @@
       "@semantic-release/git",
       {
         "assets": [
-          "projects/evo-ui-kit/CHANGELOG.md",
-          "projects/evo-ui-kit/package.json",
           "CHANGELOG.md",
           "package.json"
         ],
