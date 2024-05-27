@@ -1,26 +1,15 @@
 name: 🔄 CI
-run-name: ${{ github.actor }} is testing GH actions 🚀
 on: [push]
 jobs:
   nameless-job:
     runs-on: ubuntu-latest
     steps:
-      - run: echo "triggered on push by ${{ github.event_name }}"
-      - run: echo "os ${{ runner.os }}"
-      - run: echo "branch ${{ github.ref }}"
-      - run: echo "repo ${{ github.repository }}"
-
-      - name: Checkout repo код
-        uses: actions/checkout@v4
-      - run: echo "💡 The ${{ github.repository }} repo cloned to the runner."
-
-      - name: Список файлов
-        run: |
-          ls ${{ github.workspace }}
-      - run: echo "job status is ${{ job.status }}"
+      - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-      - run: npx --yes cowsay 'hi'
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:ci
 
 
