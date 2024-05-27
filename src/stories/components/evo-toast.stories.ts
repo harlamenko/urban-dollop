@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoButtonModule, EvoInputModule, EvoToastModule, EvoToastService} from '@ud/ui-kit';
+import {EvoButtonModule, EvoInputModule, EvoToastModule, EvoToastService} from 'udui-kit';
 import {EvoToastWrapperComponent} from './evo-toast-wrapper/evo-toast-wrapper.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';

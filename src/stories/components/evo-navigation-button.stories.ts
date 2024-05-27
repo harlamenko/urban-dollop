@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoNavigationButtonModule} from '@ud/ui-kit';
+import {EvoNavigationButtonModule} from 'udui-kit';
 
 export default {
     title: 'Components/NavigationButton',

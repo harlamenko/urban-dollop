@@ -7,8 +7,8 @@
       "node"
     ],
     "paths": {
-      "@ud/ui-kit": ["dist/evo-ui-kit"],
-      "@ud/ui-kit/*": ["dist/evo-ui-kit/*"]
+      "udui-kit": ["dist/evo-ui-kit"],
+      "udui-kit/*": ["dist/evo-ui-kit/*"]
     }
   },
   "files": [

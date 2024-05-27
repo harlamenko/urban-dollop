@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoSwitcherModule} from '@ud/ui-kit';
+import {EvoSwitcherModule} from 'udui-kit';
 
 const numbers = ['One', 'Two', 'Three'];
 

@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoNoteModule} from '@ud/ui-kit';
+import {EvoNoteModule} from 'udui-kit';
 
 export default {
     title: 'Typography/Basics',

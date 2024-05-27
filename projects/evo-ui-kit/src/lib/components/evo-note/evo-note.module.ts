@@ -3,7 +3,7 @@ import {CommonModule} from '@angular/common';
 import {EvoUiKitModule} from '../../evo-ui-kit.module';
 import {EvoNoteComponent} from './evo-note.component';
 import {EvoIconModule} from '../evo-icon';
-import {iconClose} from '@ud/ui-kit/icons/header';
+import {iconClose} from 'udui-kit/icons/header';
 
 @NgModule({
     imports: [

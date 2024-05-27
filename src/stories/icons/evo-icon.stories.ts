@@ -1,8 +1,8 @@
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {moduleMetadata} from '@storybook/angular';
-import {EvoButtonModule, EvoIconModule, EvoInputModule} from '@ud/ui-kit';
+import {EvoButtonModule, EvoIconModule, EvoInputModule} from 'udui-kit';
 import {EvoIconsWrapperComponent} from '../components/evo-icons-wrapper/evo-icons-wrapper.component';
-import {icons} from '@ud/ui-kit/icons';
+import {icons} from 'udui-kit/icons';
 import {COLOR_ICONS_LIST} from '../../generated/color-icons';
 import {EvoToastModule} from '../../../projects/evo-ui-kit/src/public_api';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -58,7 +58,7 @@ export const CustomImportExample = () => ({
             <div class="evo-content__block">
                 <h3 class="evo-title evo-tile_h3">Import all icons</h3>
                 <pre>
-import {{'{'}} icons {{'}'}} from '@ud/ui-kit/icons';
+import {{'{'}} icons {{'}'}} from 'udui-kit/icons';
 ...
 imports: [
     EvoIconModule.forRoot(icons),
@@ -68,7 +68,7 @@ imports: [
             <div class="evo-content__block">
                 <h3 class="evo-title evo-tile_h3">Import single category</h3>
                 <pre>
-import {{'{'}} headerIcons {{'}'}} from '@ud/ui-kit/icons/header';
+import {{'{'}} headerIcons {{'}'}} from 'udui-kit/icons/header';
 ...
 imports: [
     EvoIconModule.forRoot([headerIcons]),
@@ -78,7 +78,7 @@ imports: [
             <div class="evo-content__block">
                 <h3 class="evo-title evo-tile_h3">Import two icons from category</h3>
                 <pre>
-import {{'{'}} iconCalendar, iconAlert {{'}'}} from '@ud/ui-kit/icons/system';
+import {{'{'}} iconCalendar, iconAlert {{'}'}} from 'udui-kit/icons/system';
 ...
 imports: [
     EvoIconModule.forRoot([{{'{'}}
@@ -188,7 +188,7 @@ img {
 
     {{ '{' }}
         "glob": "**/*",
-        "input": "./node_modules/@ud/ui-kit/assets/",
+        "input": "./node_modules/udui-kit/assets/",
         "output": "./assets/ui-kit/"
     {{ '}' }}
     </pre>

@@ -1,6 +1,6 @@
 import {FormControl, FormGroup, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {moduleMetadata} from '@storybook/angular';
-import {EvoButtonModule, EvoNoteModule, EvoSegmentedBarModule} from '@ud/ui-kit';
+import {EvoButtonModule, EvoNoteModule, EvoSegmentedBarModule} from 'udui-kit';
 
 const deprecationWarning = `
 <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: solid 1px grey">

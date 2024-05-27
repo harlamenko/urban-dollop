@@ -1,6 +1,6 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoIconButtonColor, EvoIconButtonModule, EvoIconModule, EvoNoteModule} from '@ud/ui-kit';
-import {icons} from '@ud/ui-kit/icons';
+import {EvoIconButtonColor, EvoIconButtonModule, EvoIconModule, EvoNoteModule} from 'udui-kit';
+import {icons} from 'udui-kit/icons';
 
 export default {
     title: 'Components/IconButton',

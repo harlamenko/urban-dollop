@@ -6,7 +6,7 @@ import {
     EvoNoteModule,
 } from '../../../projects/evo-ui-kit/src/public_api';
 import {icons} from '../../../projects/evo-ui-kit/icons';
-import {EvoButtonSize, EvoButtonTheme} from '@ud/ui-kit';
+import {EvoButtonSize, EvoButtonTheme} from 'udui-kit';
 
 const deprecationWarning = `
 <div style="margin-bottom: 32px; padding-bottom: 32px; border-bottom: solid 1px grey">

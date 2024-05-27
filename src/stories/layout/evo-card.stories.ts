@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoButtonModule, EvoUiKitModule} from '@ud/ui-kit';
+import {EvoButtonModule, EvoUiKitModule} from 'udui-kit';
 
 export default {
     title: 'Layout/Card',

@@ -1,6 +1,6 @@
 import {FormControl, Validators} from '@angular/forms';
 import {moduleMetadata} from '@storybook/angular';
-import {EvoControlErrorModule} from '@ud/ui-kit';
+import {EvoControlErrorModule} from 'udui-kit';
 
 export default {
     title: 'Components/ControlError',

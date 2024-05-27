@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoNavbarModule} from '@ud/ui-kit';
+import {EvoNavbarModule} from 'udui-kit';
 import {RouterTestingModule} from '@angular/router/testing';
 
 export default {

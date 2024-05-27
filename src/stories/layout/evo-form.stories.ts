@@ -13,8 +13,8 @@ import {
     EvoTextareaModule,
     EvoUiKitModule,
     switchQueryToList,
-} from '@ud/ui-kit';
-import {iconHelp} from '@ud/ui-kit/icons/system';
+} from 'udui-kit';
+import {iconHelp} from 'udui-kit/icons/system';
 import {from, of, Subject} from 'rxjs';
 import {catchError, map, mergeMap} from 'rxjs/operators';
 import {BaseOptions} from 'flatpickr/dist/types/options';

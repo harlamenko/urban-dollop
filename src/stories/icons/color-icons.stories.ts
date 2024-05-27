@@ -35,7 +35,7 @@ img {
 
     {{ '{' }}
         "glob": "**/*",
-        "input": "./node_modules/@ud/ui-kit/assets/",
+        "input": "./node_modules/udui-kit/assets/",
         "output": "./assets/ui-kit/"
     {{ '}' }}
     </pre>

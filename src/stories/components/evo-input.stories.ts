@@ -1,8 +1,8 @@
 import {FormBuilder, FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {moduleMetadata} from '@storybook/angular';
 import {action} from '@storybook/addon-actions';
-import {EvoButtonModule, EvoChipModule, EvoIconModule, EvoInputModule} from '@ud/ui-kit';
-import {iconSearch} from '@ud/ui-kit/icons/header';
+import {EvoButtonModule, EvoChipModule, EvoIconModule, EvoInputModule} from 'udui-kit';
+import {iconSearch} from 'udui-kit/icons/header';
 
 (window as any)['global'] = window;
 

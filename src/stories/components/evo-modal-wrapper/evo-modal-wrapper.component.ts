@@ -1,5 +1,5 @@
 import {Component} from '@angular/core';
-import {EvoModalService} from '@ud/ui-kit';
+import {EvoModalService} from 'udui-kit';
 import {catchError} from 'rxjs/operators';
 import {of, throwError, timer} from 'rxjs';
 

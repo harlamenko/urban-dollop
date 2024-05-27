@@ -1,6 +1,6 @@
 import {moduleMetadata} from '@storybook/angular';
 import {EvoModalWrapperComponent} from './evo-modal-wrapper/evo-modal-wrapper.component';
-import {EvoButtonModule, EvoIconModule, EvoModalModule} from '@ud/ui-kit';
+import {EvoButtonModule, EvoIconModule, EvoModalModule} from 'udui-kit';
 import {icons} from '../../../projects/evo-ui-kit/icons';
 
 export default {

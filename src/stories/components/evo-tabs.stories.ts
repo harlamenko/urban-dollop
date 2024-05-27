@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoButtonModule, EvoTabsModule} from '@ud/ui-kit';
+import {EvoButtonModule, EvoTabsModule} from 'udui-kit';
 import {APP_BASE_HREF} from '@angular/common';
 import {ActivatedRoute, RouterModule, Routes} from '@angular/router';
 import {Component, OnInit} from '@angular/core';

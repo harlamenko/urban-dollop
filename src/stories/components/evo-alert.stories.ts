@@ -1,6 +1,6 @@
 import {moduleMetadata} from '@storybook/angular';
 import {action} from '@storybook/addon-actions';
-import {EvoAlertModule} from '@ud/ui-kit';
+import {EvoAlertModule} from 'udui-kit';
 import {EvoNoteModule} from '../../../projects/evo-ui-kit/src/lib/components/evo-note';
 
 const deprecationWarning = `

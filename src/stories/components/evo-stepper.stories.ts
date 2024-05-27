@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoButtonModule, EvoStepperModule} from '@ud/ui-kit';
+import {EvoButtonModule, EvoStepperModule} from 'udui-kit';
 import {Component, OnInit} from '@angular/core';
 
 const styles = `

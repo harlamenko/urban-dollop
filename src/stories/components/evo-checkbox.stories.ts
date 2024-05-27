@@ -1,7 +1,7 @@
 import {FormBuilder, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
 import {moduleMetadata} from '@storybook/angular';
 import {action} from '@storybook/addon-actions';
-import {EvoCheckboxModule} from '@ud/ui-kit';
+import {EvoCheckboxModule} from 'udui-kit';
 
 const fb = new FormBuilder();
 const form = fb.group({

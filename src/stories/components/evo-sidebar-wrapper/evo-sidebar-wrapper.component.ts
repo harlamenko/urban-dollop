@@ -1,5 +1,5 @@
 import {Component, Inject, Input, OnInit} from '@angular/core';
-import {EvoSidebarService} from '@ud/ui-kit';
+import {EvoSidebarService} from 'udui-kit';
 import {EVO_SIDEBAR_DATA} from 'projects/evo-ui-kit/src/lib/components/evo-sidebar';
 
 @Component({

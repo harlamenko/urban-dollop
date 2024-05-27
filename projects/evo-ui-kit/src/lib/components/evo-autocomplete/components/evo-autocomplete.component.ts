@@ -18,7 +18,7 @@ import {NgSelectComponent} from '@ng-select/ng-select';
 import {delay, takeUntil, tap} from 'rxjs/operators';
 import {isNull} from 'lodash-es';
 import {EvoInputTheme} from '../../evo-input';
-import {iconDecline} from '@ud/ui-kit/icons/system';
+import {iconDecline} from 'udui-kit/icons/system';
 import {EvoAutocompleteSize} from '../types/evo-autocomplete-size';
 
 export type DropdownPosition = 'bottom' | 'top' | 'auto';

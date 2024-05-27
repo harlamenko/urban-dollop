@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoPopoverModule} from '@ud/ui-kit';
+import {EvoPopoverModule} from 'udui-kit';
 
 export default {
     title: 'Components/Popover',

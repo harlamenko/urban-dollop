@@ -1,6 +1,6 @@
 import {moduleMetadata} from '@storybook/angular';
 import {EvoSidebarWrapperComponent, SidebarDynamicComponent} from './evo-sidebar-wrapper/evo-sidebar-wrapper.component';
-import {EvoButtonModule, EvoSidebarModule, EvoSidebarService} from '@ud/ui-kit';
+import {EvoButtonModule, EvoSidebarModule, EvoSidebarService} from 'udui-kit';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {EVO_SIDEBAR_DATA} from 'projects/evo-ui-kit/src/public_api';
 

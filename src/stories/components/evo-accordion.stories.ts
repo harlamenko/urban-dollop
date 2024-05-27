@@ -1,6 +1,6 @@
-import {EvoAccordionModule, EvoButtonModule, EvoIconModule, EvoUiKitModule} from '@ud/ui-kit';
+import {EvoAccordionModule, EvoButtonModule, EvoIconModule, EvoUiKitModule} from 'udui-kit';
 import {moduleMetadata} from '@storybook/angular';
-import {icons} from '@ud/ui-kit/icons';
+import {icons} from 'udui-kit/icons';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 export default {

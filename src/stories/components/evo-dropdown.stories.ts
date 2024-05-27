@@ -1,5 +1,5 @@
 import {moduleMetadata} from '@storybook/angular';
-import {EvoButtonModule, EvoChipModule, EvoDropdownModule} from '@ud/ui-kit';
+import {EvoButtonModule, EvoChipModule, EvoDropdownModule} from 'udui-kit';
 import {FormControl, ReactiveFormsModule} from '@angular/forms';
 
 export default {

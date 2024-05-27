@@ -1,5 +1,5 @@
 import {ChangeDetectionStrategy, Component, TemplateRef} from '@angular/core';
-import {EvoToastService, EvoToastTypes} from '@ud/ui-kit';
+import {EvoToastService, EvoToastTypes} from 'udui-kit';
 import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({

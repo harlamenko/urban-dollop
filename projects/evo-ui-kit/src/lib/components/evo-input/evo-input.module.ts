@@ -6,7 +6,7 @@ import {EvoUiKitModule} from '../../evo-ui-kit.module';
 import {EvoControlErrorModule} from '../evo-control-error/evo-control-error.module';
 import {FormsModule} from '@angular/forms';
 import {EvoIconModule} from '../evo-icon';
-import {iconDecline, iconHelp} from '@ud/ui-kit/icons/system';
+import {iconDecline, iconHelp} from 'udui-kit/icons/system';
 import {EvoInputIconDirective} from './evo-input-icon/evo-input-icon.directive';
 
 
