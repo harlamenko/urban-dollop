@@ -32,6 +32,6 @@
         }
     },
     "scripts": {
-        "release": "semantic-release"
+        "release": "semantic-release --debug"
     }
 }
