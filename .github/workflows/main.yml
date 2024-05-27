@@ -1,8 +1,13 @@
 name: 🔄 CI
 on: [push]
 jobs:
-  prepare:
+  nameless-job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write # to be able to publish a GitHub release
+      issues: write # to be able to comment on released issues
+      pull-requests: write # to be able to comment on released pull requests
+      id-token: write # to enable use of OIDC for npm provenance
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -12,36 +17,18 @@ jobs:
         with:
           node-version: 'lts/*'
 
-
-  install-dependencies:
-    runs-on: ubuntu-latest
-    steps:
       - name: Install dependencies
         run: npm ci
 
-  build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Build
-      run: npm run build
+      - name: Build
+        run: npm run build
 
-  #test:
-    #runs-on: ubuntu-latest
-    #steps:
-    #- name: Test
-    #  run: npm run test:ci
+      #- name: Test
+      #  run: npm run test:ci
 
+      - name: Release
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: cd projects/evo-ui-kit/ && npm run release && cd ../../
 
-  release:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write # to be able to publish a GitHub release
-      issues: write # to be able to comment on released issues
-      pull-requests: write # to be able to comment on released pull requests
-      id-token: write # to enable use of OIDC for npm provenance
-    steps:
-    - name: Release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-      run: cd projects/evo-ui-kit/ && npm run release && cd ../../
