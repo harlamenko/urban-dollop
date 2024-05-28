@@ -30,5 +30,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: cd projects/evo-ui-kit/ && npm run release && echo "F I R S T" && pwd && ls && cat package.json && cd ../../ && echo "S E C O N D" && pwd && ls
+        run: cd projects/evo-ui-kit/ && npm run release -- --debug && echo "F I R S T" && pwd && ls && cat package.json && cd ../../ && echo "S E C O N D" && pwd && ls
 
