@@ -1,3 +1,10 @@
+# [1.12.0](https://github.com/harlamenko/urban-dollop/compare/v1.11.0...v1.12.0) (2024-05-28)
+
+
+### Features
+
+* try to update package.json in projects dir as well ([b7bd493](https://github.com/harlamenko/urban-dollop/commit/b7bd49366eb894d5bbaa55b8ecb96f45ea4b8a79))
+
 # [1.11.0](https://github.com/harlamenko/urban-dollop/compare/v1.10.0...v1.11.0) (2024-05-28)
 
 
