@@ -20,7 +20,7 @@
         "createDefaultProgram": true
       },
       "extends": [
-        "@ud/eslint-config-ng",
+        "@evotor-dev/eslint-config-ng",
         "prettier"
       ]
     },
