@@ -1,3 +1,21 @@
+# [3.0.0](https://github.com/harlamenko/urban-dollop/compare/v2.1.0...v3.0.0) (2024-05-29)
+
+
+### Bug Fixes
+
+* some ([5097e9b](https://github.com/harlamenko/urban-dollop/commit/5097e9bbcb540ca1b0d29527f4018934fee4f274))
+
+
+### Features
+
+* 123 ([08cf1e5](https://github.com/harlamenko/urban-dollop/commit/08cf1e561050f17513e004fdcce69ff2c3726e1b))
+* msg21 ([8a3ce82](https://github.com/harlamenko/urban-dollop/commit/8a3ce82b3844e3a7b34d728abd97da6965b37f2b))
+
+
+### BREAKING CHANGES
+
+* 2ebob1
+
 # [3.0.0-beta.3](https://github.com/harlamenko/urban-dollop/compare/v3.0.0-beta.2...v3.0.0-beta.3) (2024-05-29)
 
 
