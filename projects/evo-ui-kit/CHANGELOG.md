@@ -1,3 +1,15 @@
+# [3.0.0-alpha.1](https://github.com/harlamenko/urban-dollop/compare/v2.0.0...v3.0.0-alpha.1) (2024-05-29)
+
+
+### Features
+
+* msg21 ([8a3ce82](https://github.com/harlamenko/urban-dollop/commit/8a3ce82b3844e3a7b34d728abd97da6965b37f2b))
+
+
+### BREAKING CHANGES
+
+* 2ebob1
+
 # [2.0.0](https://github.com/harlamenko/urban-dollop/compare/v1.12.0...v2.0.0) (2024-05-29)
 
 
