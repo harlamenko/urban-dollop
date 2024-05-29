@@ -45,7 +45,7 @@ jobs:
           path: 'node_modules'
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-lock-hash-${{ hashFiles('package-lock.json') }}
       - name: Lint
-        run: npm run lint
+        run: ls node_modules && npm run lint
 
   test:
     if: false # TODO: remove when tests will fixed
@@ -75,4 +75,4 @@ jobs:
           path: 'node_modules'
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-lock-hash-${{ hashFiles('package-lock.json') }}
       - name: Build
-        run: npm run build
+        run: ls && npm run build
