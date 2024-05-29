@@ -7,9 +7,6 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
   cancel-in-progress: true
 
-env:
-  NODE_VERSION: lts/*
-
 jobs:
   release:
     runs-on: ubuntu-latest
