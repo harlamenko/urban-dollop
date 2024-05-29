@@ -20,7 +20,7 @@ jobs:
       - name: Begin CI...
         uses: actions/checkout@v4
       - name: Read .nvmrc
-        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        run: ver="$(cat .nvmrc)"; echo "NVMRC=$ver" >> "$GITHUB_ENV"
         id: nvm
       - name: Setup node (.nvmrc)
         uses: actions/setup-node@v4
