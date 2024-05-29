@@ -3,6 +3,18 @@
 
 ### Features
 
+* brrrchange node setup1 ([9811733](https://github.com/harlamenko/urban-dollop/commit/981173397f0a96e70c6af089c4be9b0e54d0a807))
+* change branches ([2aea370](https://github.com/harlamenko/urban-dollop/commit/2aea370608e7cded4def906c0f6e2c65307603a9))
+* change branches ([1be9807](https://github.com/harlamenko/urban-dollop/commit/1be98074e038f7b06a239c39f68b3d48eed41f57))
+* change node setup ([6c1b0a7](https://github.com/harlamenko/urban-dollop/commit/6c1b0a79782b32cfccf86b500c81f4b5e76abf0f))
+* change node setup ([4cef40b](https://github.com/harlamenko/urban-dollop/commit/4cef40b57512e5379a7bffc633a19a5c02a070b6))
+* change node setup1 ([e81401f](https://github.com/harlamenko/urban-dollop/commit/e81401ff6c7620d8b57d004f2a5ab2fd64adeec5))
+
+# [1.13.0](https://github.com/harlamenko/urban-dollop/compare/v1.12.0...v1.13.0) (2024-05-29)
+
+
+### Features
+
 * change branches ([2aea370](https://github.com/harlamenko/urban-dollop/commit/2aea370608e7cded4def906c0f6e2c65307603a9))
 * change branches ([1be9807](https://github.com/harlamenko/urban-dollop/commit/1be98074e038f7b06a239c39f68b3d48eed41f57))
 * change node setup ([6c1b0a7](https://github.com/harlamenko/urban-dollop/commit/6c1b0a79782b32cfccf86b500c81f4b5e76abf0f))
