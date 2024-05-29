@@ -26,6 +26,10 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '${{ env.NODE_VERSION }}'
+      - uses: actions/cache@v4
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-packs-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
 
@@ -36,6 +40,10 @@ jobs:
     steps:
       - name: Start linting...
         uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-packs-${{ hashFiles('**/package-lock.json') }}
       - name: Lint
         run: npm run lint
 
@@ -47,6 +55,10 @@ jobs:
     steps:
       - name: Start testing...
         uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-packs-${{ hashFiles('**/package-lock.json') }}
       - name: Test
         run: |
           npm run test:ci
@@ -58,5 +70,9 @@ jobs:
     steps:
       - name: Start building...
         uses: actions/checkout@v4
+      - uses: actions/cache@v4
+        with:
+          path: '**/node_modules'
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-packs-${{ hashFiles('**/package-lock.json') }}
       - name: Build
         run: npm run build
