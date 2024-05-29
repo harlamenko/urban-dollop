@@ -22,13 +22,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Read .nvmrc
-        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
-        id: nvm
-      - name: Setup node (.nvmrc)
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '${{ steps.nvm.outputs.NVMRC }}'
+          node-version: 'lts/*'
 
       - name: Install dependencies
         run: npm ci
@@ -40,5 +37,5 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: cd projects/evo-ui-kit/ && npm run release && cd ../../
+        run: cd projects/evo-ui-kit/ && npx --yes semantic-release && cd ../../
 
