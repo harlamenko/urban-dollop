@@ -1,7 +1,8 @@
 {
   "branches": [
     "main",
-    "beta"
+    {"name": "beta", "prerelease": true},
+    {"name": "alpha", "prerelease": true}
   ],
   "plugins": [
     "@semantic-release/release-notes-generator",
