@@ -22,10 +22,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node.js
+      - name: Read .nvmrc
+        run: echo ::set-output name=NVMRC::$(cat .nvmrc)
+        id: nvm
+      - name: Setup node (.nvmrc)
         uses: actions/setup-node@v4
         with:
-          node-version: 'lts/*'
+          node-version: '${{ steps.nvm.outputs.NVMRC }}'
 
       - name: Install dependencies
         run: npm ci
