@@ -1,4 +1,4 @@
 module.exports = {
-    "src/**/*.ts, projects/**/*.ts": ["npm run lint:ts"],
+    "src/**/*.ts, projects/**/*.ts": ["ng-lint-staged lint --"],
     "src/**/*.scss": ["npm run lint:styles"]
 };
