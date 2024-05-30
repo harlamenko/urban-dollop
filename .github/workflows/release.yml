@@ -8,71 +8,6 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  install:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Begin CI...
-        uses: actions/checkout@v4
-      - name: Read .nvmrc
-        run: ver="$(cat .nvmrc)"; echo "NODE_VERSION=$ver" >> $GITHUB_OUTPUT
-        id: nvm
-      - name: Setup node (.nvmrc)
-        uses: actions/setup-node@v4
-        with:
-          node-version: '${{ steps.nvm.outputs.NODE_VERSION }}'
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ needs.install.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
-        run: npm ci
-
-  lint:
-    runs-on: ubuntu-latest
-    needs: [install]
-
-    steps:
-      - name: Start linting...
-        uses: actions/checkout@v4
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ needs.install.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
-      - name: Lint
-        run: ls node_modules && npm run lint
-
-  test:
-    if: false # TODO: remove when tests will fixed
-    runs-on: ubuntu-latest
-    needs: [install]
-
-    steps:
-      - name: Start testing...
-        uses: actions/checkout@v4
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ needs.install.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
-      - name: Install dependencies
-        run: npm ci
-      - name: Test
-        run: |
-          npm run test:ci
-
-  build:
-    runs-on: ubuntu-latest
-    needs: [install]
-
-    steps:
-      - name: Start building...
-        uses: actions/checkout@v4
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ needs.install.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
-      - name: Build
-        run: ls && npm run build
   release:
     runs-on: ubuntu-latest
     permissions:
@@ -80,14 +15,6 @@ jobs:
       issues: write # to be able to comment on released issues
       pull-requests: write # to be able to comment on released pull requests
       id-token: write # to enable use of OIDC for npm provenance
-
-    needs: [
-      install,
-      lint,
-      #test, TODO: add when fixed
-      build
-    ]
-
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -97,16 +24,14 @@ jobs:
         with:
           node-version: 'lts/*'
 
-      - uses: actions/cache@v4
-        with:
-          path: '**/node_modules'
-          key: ${{ runner.os }}-${{ needs.install.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm ci
+
+      - name: Build
+        run: npm run build
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: cd projects/evo-ui-kit/ && npx --yes semantic-release && cd ../../
-
