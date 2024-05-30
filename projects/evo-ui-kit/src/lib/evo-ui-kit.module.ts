@@ -12,7 +12,7 @@ import {EvoIsExpandedDirective, EvoLetDirective} from './directives';
 
 export { WINDOW_PROVIDERS };
 
-const directives = [
+const directive = [
     EvoUiClassDirective,
     EvoClickOutsideDirective,
     EvoIsExpandedDirective,
