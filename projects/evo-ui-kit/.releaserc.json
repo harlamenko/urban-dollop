@@ -1,6 +1,7 @@
 {
   "branches": [
     "main",
+    "ver/v5",
     {"name": "beta", "prerelease": true},
     {"name": "alpha", "prerelease": true}
   ],
