@@ -50,11 +50,9 @@ jobs:
       - name: Start linting...
         uses: actions/checkout@v4
       - uses: actions/cache@v4
-        env:
-          NODE_VERSION: ${{needs.install.outputs.NODE_VERSION}}
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-${{ $NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ needs.install.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
 
       - name: Lint
         run: npm run lint
@@ -68,11 +66,9 @@ jobs:
       - name: Start testing...
         uses: actions/checkout@v4
       - uses: actions/cache@v4
-        env:
-          NODE_VERSION: ${{needs.install.outputs.NODE_VERSION}}
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-${{ $NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ needs.install.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
 
       - name: Test
         run: npm run test:ci
@@ -85,11 +81,9 @@ jobs:
       - name: Start building...
         uses: actions/checkout@v4
       - uses: actions/cache@v4
-        env:
-          NODE_VERSION: ${{needs.install.outputs.NODE_VERSION}}
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-${{ $NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ needs.install.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
 
       - name: Build
         run: npm run build
