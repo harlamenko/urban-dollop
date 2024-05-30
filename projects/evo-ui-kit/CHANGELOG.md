@@ -1,3 +1,15 @@
+# [6.0.0](https://github.com/harlamenko/urban-dollop/compare/v5.1.0...v6.0.0) (2024-05-30)
+
+
+### Features
+
+* add app log ([4368858](https://github.com/harlamenko/urban-dollop/commit/4368858a412996802c15d2aea274a882bc722adb))
+
+
+### BREAKING CHANGES
+
+* LOOOOOOOOGGGGGING
+
 # [5.1.0](https://github.com/harlamenko/urban-dollop/compare/v5.0.0...v5.1.0) (2024-05-30)
 
 
