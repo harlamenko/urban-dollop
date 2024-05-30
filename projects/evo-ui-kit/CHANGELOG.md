@@ -1,3 +1,10 @@
+## [5.3.2](https://github.com/harlamenko/urban-dollop/compare/v5.3.1...v5.3.2) (2024-05-30)
+
+
+### Bug Fixes
+
+* deps1 ([4edab72](https://github.com/harlamenko/urban-dollop/commit/4edab726ab4ecec38aff831c78d162a6ddd81161))
+
 ## [5.3.1](https://github.com/harlamenko/urban-dollop/compare/v5.3.0...v5.3.1) (2024-05-30)
 
 
