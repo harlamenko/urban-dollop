@@ -27,7 +27,7 @@ jobs:
       - uses: actions/cache@v4
         with:
           path: '**/node_modules'
-          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
+          key: ${{ runner.os }}-${{ steps.nvm.outputs.NODE_VERSION }}-lock-hash-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install dependencies
         run: npm ci
@@ -40,6 +40,7 @@ jobs:
       issues: write # to be able to comment on released issues
       pull-requests: write # to be able to comment on released pull requests
       id-token: write # to enable use of OIDC for npm provenance
+
     steps:
       - name: Start building...
         uses: actions/checkout@v4
