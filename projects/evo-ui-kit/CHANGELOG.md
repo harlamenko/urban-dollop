@@ -1,3 +1,11 @@
+# [6.1.0](https://github.com/harlamenko/urban-dollop/compare/v6.0.0...v6.1.0) (2024-05-30)
+
+
+### Features
+
+* 123 ([55bbe74](https://github.com/harlamenko/urban-dollop/commit/55bbe74a9a54d0cafe4967d955d935ca5b4dde13))
+* 1231 ([ab94ed8](https://github.com/harlamenko/urban-dollop/commit/ab94ed8a9f0a850cb57281d51fc0711db9214ce5))
+
 # [6.0.0](https://github.com/harlamenko/urban-dollop/compare/v5.1.0...v6.0.0) (2024-05-30)
 
 
